@@ -4,6 +4,9 @@ import home from '../components/home'
 import member from '../components/member'
 import search from '../components/search'
 import shoppingcar from '../components/shoppingcar'
+import news from '../components/newslist/news'
+import newsinfo from '../components/newslist/newsinfo'
+import photolist from '../components/photo/photolist'
 
 Vue.use(Router)
 
@@ -11,10 +14,22 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/home'
+      redirect: '/home',
     },
     { path: '/home',
-      component: home
+      component: home,
+    },
+    {
+      path: '/home/newslist',
+      component: news,
+    },
+    {
+      path: '/home/newsinfo/:id',
+      component: newsinfo
+    },
+    {
+      path: '/home/photolist',
+      component: photolist
     },
     {
       path: '/member',
@@ -27,7 +42,7 @@ export default new Router({
     {
       path: '/search',
       component: search
-    }
+    },
   ],
   linkActiveClass: 'mui-active'
 })
